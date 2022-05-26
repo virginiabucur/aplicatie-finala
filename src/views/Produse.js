@@ -77,3 +77,13 @@ function Produse() {
 	);
 }
 export default Produse;
+
+// exemplu filtrare pe categorii
+// const arr = ['one', 'two', 'three', 'four'];
+// const categories = ['one', 'two'];
+
+// const multipleExist = values(poate fi string).every(value => {
+//   return arr.includes(value);
+// });
+
+// console.log(multipleExist); // 👉️ true
