@@ -54,9 +54,8 @@ function Produse() {
 			<div className='container'>
 				<div>
 					<h1>Product categories</h1>
-					{/* <Link>accesorii</Link>
-					<Link>fashon</Link>
-					<Link>ceva</Link> */}
+					{/* Linka catre ccesorii
+					fashon*/}
 				</div>
 			{/* sub denumire pagina aducem Search ul */}
 				<div>

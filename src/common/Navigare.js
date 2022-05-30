@@ -5,11 +5,11 @@ function Navigare (){
     return (
     <div className='container_navigare'>
             <p classlogo='logo'>Outstock</p>
-        <div>
+            <div className='left_component'>
             <Link className = 'links' to='/'>Home</Link>
             <Link className = 'links' to='/produse'>Produse</Link>
+            </div>
             <Link className = 'links' to='/wishlist'>Wishlist</Link>
-        </div>
     </div>
     );
 }
