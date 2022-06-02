@@ -2,6 +2,7 @@ import "./Produse.css";
 import Search from "../components/Produse/Search";
 import ProdusList from "../components/Produse/ProdusList";
 import { useState, useEffect } from "react";
+import {addToWishlist} from "../helpers";
 import { Link } from "react-router-dom";
 // import Footer from "../common/Footer";
 
@@ -54,7 +55,7 @@ function Produse() {
 			<div className='container'>
 				<div>
 					<h1>Product categories</h1>
-					{/* Linka catre ccesorii
+					{/* Linka catre accesorii
 					fashon*/}
 				</div>
 			{/* sub denumire pagina aducem Search ul */}

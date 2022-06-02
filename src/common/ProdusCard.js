@@ -1,15 +1,24 @@
 //avem date despre un produs
 import { Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import { addToWishlist } from "../helpers";
+import {useState} from "react";
+import {addToWishlist} from "../helpers";
+
 
 function ProdusCard({ produs }) {
+	const [showButton, setshowButton] = useState(false);
 	return (
-		<Col xs='12' md='6'>
+		<Col 
+			xs='12' 
+			md='6'
+			onMouseEnter={()=>{
+				setshowButton(true);
+				}}
+			onMouseLeave={()=>{
+					setshowButton(false);
+				}}>
 			<Link
 				to={"..common/ProdusList/" + produs.id}
-
-
 				style={{
 					textDecoration: "none",
 					color: "black",
@@ -23,19 +32,22 @@ function ProdusCard({ produs }) {
 						width: "100%",
 						marginTop: "60px",
 					}}
-
 				/>
 				<h2>{produs.title}</h2>
-				<p>{produs.price}</p>
+				{/* //de adaugat cuvantul ron dupa price */}
+				<p>{produs.price}</p> 
 			</Link>
 			<div style={{ minHeight: "50px" }}>
-			<Button
-				className='mt-4 mb-4'
-				onClick={() => {
-					addToWishlist(produs);
-				}}>
-				Add to wishlist!
-			</Button>
+				{showButton && (
+					<Button
+						className='mt-4 mb-4'
+						outline
+						onClick={() => {
+						addToWishlist(produs);
+						}}>
+					Add to wishlist!
+				</Button>
+				)}
 			</div>
 		</Col>
 	);

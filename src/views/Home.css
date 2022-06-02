@@ -1,6 +1,18 @@
 cover_image {
     max-width: 100%;
-    margin: top 0;
+    /* margin: poate avea valori negative; este folosit pentru a pozitiona elementul fata de alt element din pagina */
+    margin: -100; 
     height: 100%;
     object-fit: contain;
+    padding: 0;
+    top: 0;
   }
+  /* .home_caption{
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    position: absolute; 
+  }  */

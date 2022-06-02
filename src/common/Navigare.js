@@ -4,7 +4,7 @@ import {Link, link} from "react-router-dom";
 function Navigare (){
     return (
     <div className='container_navigare'>
-            <p classlogo='logo'>Outstock</p>
+            <Link className='links' to = '/'><p classlogo='logo'>Outstock</p></Link>
             <div className='left_component'>
             <Link className = 'links' to='/'>Home</Link>
             <Link className = 'links' to='/produse'>Produse</Link>

@@ -1,18 +1,21 @@
-export const addToWishlist = (produs) => {
-	const produsListStorage = localStorage.getItem("produsList");
-	if (produsListStorage === null) {
+// pas7 wishlist: pune datele in local storage folosind functia addToWishlist
+// care primeste ca input toate produsele
+export const addToWishlist = (produs)=>{
+	const postListStorage = localStorage.getItem("produsList");
+	// daca local storage ul este gol, punem produsul din wishlist in el
+	if(postListStorage === null) {
 		const produsList = [];
 		produsList.push(produs);
 		localStorage.setItem("produsList", JSON.stringify(produsList));
 	} else {
-		const storageArray = JSON.parse(produsListStorage);
-		if (
+		const storageArray = JSON.parse(postListStorage);
+		if (	
 			!storageArray.find((produsStorage) => {
-				return produsStorage.title === produs.title;
+				return produsStorage.id === produs.id;
 			})
-		) {
-			storageArray.push(produs);
-			localStorage.setItem("produsList", JSON.stringify(storageArray));
+			) {	
+		storageArray.push(produs);
+		localStorage.setItem("produsList", JSON.stringify(storageArray));
 		}
 	}
 };

@@ -13,17 +13,10 @@ function ProdusList({ produs }) {
 // Pas8: de facut design ul pentru ProdusCard, in loc de h3, ne folosim de card
 				//return 
 				// (<div key={"produs_" + index}>{produs.title}<p>{produs.description}</p></div>
-				
 				// );
-
 				return (<ProdusCard produs={produs} key={"produs_" + index} />);
-				
-				
 			})}
-
-			
 		</div>
 	);
 }
-
 export default ProdusList;
