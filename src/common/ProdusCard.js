@@ -1,5 +1,5 @@
 //avem date despre un produs
-import { Col, Button } from "reactstrap";
+import { Col, Button, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import {useState} from "react";
 import {addToWishlist} from "../helpers";
@@ -22,20 +22,18 @@ function ProdusCard({ produs }) {
 				style={{
 					textDecoration: "none",
 					color: "black",
-				}}>
+				}}>	
 				<img
 					src={produs.image}
-					alt={produs.description}
 					style={{
 						height: "300px",
-						objectFit: "cover",
+						objectFit: "contain",
 						width: "100%",
 						marginTop: "60px",
 					}}
 				/>
 				<h2>{produs.title}</h2>
-				{/* //de adaugat cuvantul ron dupa price */}
-				<p>{produs.price}</p> 
+				<p>{produs.price} {"EUR"}</p> 
 			</Link>
 			<div style={{ minHeight: "50px" }}>
 				{showButton && (

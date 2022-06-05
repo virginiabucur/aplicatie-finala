@@ -1,8 +1,45 @@
+.cover_image{
+    object-fit: contain;
+    padding: 0;
+    top: 0;
+}
+.title{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-color:gray;
+}
 .table_row {
     display: flex;
     justify-content: space-around;
-    background-color:gray;
+    background-color:white;
     margin:10px;
     padding:10px;
     border-radius:15px;
 }
+ .text_image { 
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+ }
+ .text_image2{ 
+    margin: 20px;
+    position: absolute;
+    top: 51%;
+    left: 51.5%;
+    margin-left:15px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+ }
+ 
+

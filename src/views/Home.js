@@ -2,15 +2,17 @@ import { Button } from "reactstrap";
 import {Carousel} from "react-bootstrap";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Footer from "../common/Footer";
 
 function Home() {
     return(
+      <>
     <Carousel variant="dark">
     <Carousel.Item>
     <img
       className="cover_image"
       src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/11/slider-home2.jpg"
-      alt="First slide"
+      alt=""
     />
     <Carousel.Caption className="home_caption">
       <h2>Drop chair</h2>
@@ -33,6 +35,8 @@ function Home() {
     </Carousel.Caption>
   </Carousel.Item>
     </Carousel>
+    <Footer/>
+    </>
     );
 }
 export default Home;

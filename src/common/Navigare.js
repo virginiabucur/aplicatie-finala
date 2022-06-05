@@ -1,5 +1,5 @@
 import "./Navigare.css";
-import {Link, link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Navigare (){
     return (
