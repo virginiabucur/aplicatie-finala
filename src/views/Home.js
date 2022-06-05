@@ -1,13 +1,17 @@
 import { Button, Container } from "reactstrap";
-import {Carousel} from "react-bootstrap";
+import {Carousel, Col, Row} from "react-bootstrap";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Footer from "../common/Footer";
+import Categorii from "../components/Home/Categorii";
 
 function Home() {
     return(
       <>
-      <Container className="home_container">
+      <Container className="home_container"
+      xs="12"
+      md="12"
+      >
         <Carousel variant="dark">
         <Carousel.Item>
     <img
@@ -37,6 +41,21 @@ function Home() {
   </Carousel.Item>
     </Carousel>
     </Container>
+    <Container className='categorii'
+      xs="12"
+      md="4">
+      <Col>
+        <Row>
+        </Row>
+        <Row>
+        </Row>
+        <Row>
+          
+        </Row>
+      </Col>
+
+    </Container>
+    <Categorii/>
     <Footer/>
     </>
     );

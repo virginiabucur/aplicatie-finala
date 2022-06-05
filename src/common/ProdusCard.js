@@ -26,7 +26,7 @@ function ProdusCard({ produs }) {
 				<img
 					src={produs.image}
 					style={{
-						height: "300px",
+						height: "380px",
 						objectFit: "contain",
 						width: "100%",
 						marginTop: "60px",
