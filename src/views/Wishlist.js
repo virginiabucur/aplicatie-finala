@@ -1,10 +1,11 @@
 //Pas1: importam useState si useEffect din react
 import { useState, useEffect } from "react";
 //Pas4: importam container ul, row ul si col din reactstrap
-import {Container, Row, Button, Col} from "reactstrap";
+import {Container, Button} from "reactstrap";
 import {Link} from "react-router-dom";
-import {Table} from "bootstrap";
+import {Table} from "react-bootstrap";
 import "./Wishlist.css";
+import Footer from "../common/Footer";
 
 function Wishlist() {
 		//Pas2: in interiorul wishlist ului facem un state pt produsele ce levom avea acolo;
@@ -37,9 +38,12 @@ function Wishlist() {
 	return (
 		<>
 	{/* //pas4: in interiorul row lui vom avea tabelul cu produsele din wishlist */}
-			<Container className="cover_image">
+			<Container className="cover_image"
+			xs="12"
+			md ="6">
 				<div>
 					<img src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/09/banner-page.jpg"
+					alt=""
 					/>
 					<h2 className="text_image">Wishlist
 					<br />
@@ -47,59 +51,52 @@ function Wishlist() {
 					</h2>
 					<span className = 'text_image2'>/Wishlist</span>
 				</div>
-				<Row>
-					<div className="title">
-						<h3>My wishlist</h3>
-						<div className="table_header">
-							<Col>
-								Imagine 
-							</Col>
-							<Col>
-								Denumire
-							</Col>
-							<Col>
-								Pret
-							</Col>
-							<Col>
-								Actiune
-							</Col>
-						</div>
-					</div>
-					{/* pas5: folosind map  insearm o line noua pt fiecare produs  */}
+
+				<Table>
+				<thead>
+    				<tr>
+      					<th>Nr crt</th>
+      					<th>Imagine</th>
+      					<th>Denumire</th>
+      					<th>Pret</th>
+						<th>Actiune</th> 
+    					</tr>
+  				</thead>
+				  <tbody>
+					  {/* pas5: folosind map insearm o line noua in taleb pt fiecare produs  */}
 					{produs.map((produs)=> {
 						return(
-							<div className="table_row" key={"produs_wishlist_" + produs.id}>
-								<Col>
-								<img
+    				<tr key={"produs_wishlist_" + produs.id}>
+      					<td>{"index"}</td>
+      					<td>
+							  <img
+							  	alt=""
 								src={produs.image}
 								style={{
 								height: "100px",
 								objectFit: "contain",
 								width: "80%",
 								marginTop: "60px",
-					}}
-				/>
-								</Col>
-								<Col>
-									{produs.title}
-								</Col>
-								<Col>
-									{produs.price} {"EUR"}
-								</Col>
-								<Col>
-									<Button 
-										color='danger' 
-										onClick={()=>{
-											onDelete(produs.id)
+								}}
+							/>
+						</td>
+     			 		<td>{produs.title}</td>
+      					<td>{produs.price} {"EUR"}</td>
+						<td><Button 
+								color='danger' 
+									onClick={()=>{
+										onDelete(produs.id)
 									}}>
-										Sterge!
-									</Button>
-								</Col>
-							</div>
+									Sterge!
+							</Button></td>
+
+    					</tr>
 						);
 					})}
-				</Row>
+					</tbody>
+				</Table>
 			</Container>
+		<Footer />
 		</>
 	);
 }

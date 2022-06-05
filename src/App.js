@@ -6,6 +6,7 @@ import Home from "./views/Home";
 import Produse from "./views/Produse";
 import Wishlist from "./views/Wishlist";
 import Navigare from "./common/Navigare";
+import Footer from "./common/Footer";
 
 function App() {
 	return (

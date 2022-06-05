@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import {Row, Col, Container} from "reactstrap";
 import {addToWishlist} from "../helpers";
 import { Link } from "react-router-dom";
-// import Footer from "../common/Footer";
+import Footer from "../common/Footer";
 
 
 function Produse() {
@@ -53,7 +53,9 @@ function Produse() {
 
 	return (
 		<>
-			<Container className='container'>
+			<Container className='container'
+			xs="12"
+			md ="6">
 				<Col>
 					<Row>
 						<h1>Product categories</h1>
@@ -83,7 +85,7 @@ function Produse() {
 					</Container>
 				</Col>
 			</Container>
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }
