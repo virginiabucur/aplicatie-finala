@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../common/Footer";
 import { useState, useEffect } from "react";
 import CategoriiList from "../components/Home/CategoriiList";
-import ListaProdusePopulare from "../components/Home/ListaProduseProdusePopulare";
+// import ListaProdusePopulare from "../components/Home/ListaProduseProdusePopulare";
 
 function Home() {
   //p1 categorii
@@ -30,7 +30,8 @@ function Home() {
   }, []);
 
   return (
-    categorii && (
+    categorii && 
+    // populare && 
       <>
         <Container className="home_container" xs="12" md="12">
           <Carousel variant="dark">
@@ -85,15 +86,20 @@ function Home() {
                 <h1>Trending Products</h1>
                 <h4>Descriere produse populare</h4>
             </div>
-            <div>
-                <ListaProdusePopulare/>
+            <Row>
+              <div>
+                 {/* {populare.title} */}
+                 {/* <ListaProdusePopulare /> */}
+                 {/* {populare} */}
+        
               </div>
+            </Row>
           </>
         </Container>
         <Footer />
         </Container>
       </>
     )
-  );
+  
 }
 export default Home;

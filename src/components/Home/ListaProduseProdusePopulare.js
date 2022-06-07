@@ -1,6 +1,7 @@
 // import "./ProdusList.css";
 import { useState, useEffect } from "react";
 import {Row, Col, Container} from "reactstrap";
+// import Home from "../../views/Home";
 
 
 
@@ -24,14 +25,16 @@ function ListaProdusePopulare() {
 		<div>
             <Row> {populare ? (
                     <>
-                        {populare.map((populare, key) => {
-                            // return <Home populare={populare} />;
+                        {populare.map((populare, index) => {
+                            return <Home populare={populare} key={"populare_" + index} />;
                         })}
                     </>
                 ) : (
                     <div>Loading ...</div>
                 )}</Row>
-
+        <Row>
+                    {populare.title}
+        </Row>
 
 
             
