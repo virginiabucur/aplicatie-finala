@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../common/Footer";
 import { useState, useEffect } from "react";
 import CategoriiList from "../components/Home/CategoriiList";
-// import ListaProdusePopulare from "../components/Home/ListaProduseProdusePopulare";
+import ListaProdusePopulare from "../components/Home/ListaProduseProdusePopulare";
 
 function Home() {
   //p1 categorii
@@ -29,9 +29,25 @@ function Home() {
     getCategorii();
   }, []);
 
+  const [populare, setPopulare] = useState(null);
+  const getPopulare = async () => {
+    const response = await fetch(
+      "https://fakestoreapi.com/products?limit=8"
+    );
+    const populareFromAPI = await response.json();
+    setPopulare(populareFromAPI);
+    console.log(populareFromAPI);
+  };
+
+  useEffect(() => {
+    getPopulare();
+  }, []);
+
+
+
   return (
     categorii && 
-    // populare && 
+    populare && 
       <>
         <Container className="home_container" xs="12" md="12">
           <Carousel variant="dark">
@@ -80,19 +96,23 @@ function Home() {
             {/* </Row> */}
             {/* </Col> */}
           </Container>
-        <Container className="produse_populare">
+        <Container className="populare"
+        >
           <>
             <div>
                 <h1>Trending Products</h1>
                 <h4>Descriere produse populare</h4>
             </div>
             <Row>
-              <div>
-                 {/* {populare.title} */}
-                 {/* <ListaProdusePopulare /> */}
-                 {/* {populare} */}
-        
-              </div>
+            {populare ? (
+                    <>
+                        {populare.map((populare, index) => {
+                            return <ListaProdusePopulare populare={populare} key={"populare_" + index} />;
+                        })}
+                    </>
+                ) : (
+                    <div>Loading ...</div>
+                )}
             </Row>
           </>
         </Container>

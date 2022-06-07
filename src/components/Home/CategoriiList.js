@@ -7,7 +7,7 @@ function CategoriiList({ categorii }) {
   console.log(JSON.stringify(categorii));
   return categorii.map((categorii, key) => {
     return (
-	<Container>
+	<Container className="categorii_list">
 		<Row>
 					{categorii}
 					{key}
