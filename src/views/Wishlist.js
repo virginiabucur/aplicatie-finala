@@ -67,7 +67,7 @@ function Wishlist() {
 					{produs.map((produs)=> {
 						return(
     				<tr key={"produs_wishlist_" + produs.id}>
-      					<td>{"index"}</td>
+      					<td>{""}</td>
       					<td>
 							  <img
 							  	alt=""

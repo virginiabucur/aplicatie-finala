@@ -11,7 +11,7 @@ import Footer from "../common/Footer";
 function Produse() {
 	//Pas1: definim variabila de stare, initial fara valori in ea
 	const [produs, setProdus] = useState(null);
-	//Pas10: facem o variabila de stare care aduce datle din input Search in pagina principala, folosindu ne de HEANDLE
+	//Pas10: facem o variabila de stare care aduce datele din input Search in pagina principala, folosindu ne de HEANDLE
 	const [inputValue, setInputValue] = useState(null);
 
 	//Pas3: creeam functia ce va seta datele de care avem nevoie 
@@ -56,7 +56,8 @@ function Produse() {
 			<Container className='container'
 			xs="12"
 			md ="6">
-				<Col>
+				<Col md="4"
+				xs="12">
 					<Row>
 						<h1>Product categories</h1>
 						<h3>Accessories</h3>
@@ -67,15 +68,20 @@ function Produse() {
 					fashon*/}
 				</Col>
 			{/* sub denumire pagina aducem Search ul */}
-				<Col>
-					<Container>
+				<Col md="4"
+				xs="12">
+					<Container
+						md="4"
+						xs="12">
 					<Row>
 						<Search handleSearch={onSearch} />
 						{/* sub Search aducem lista de produse */}
 						{/* daca avem produse in lista, afisam ProdusList, altfel afisam un div ce contine mesajul:Loading */}
 						{/* Pas6: trimitem datele privind produsele la ProdusList */}
 					</Row>
-					<Row>
+					<Row 
+						md="4"
+						xs="12">
 						{produs ? (
 						<ProdusList produs={filterByInput(produs, inputValue)} />
 							) : (
