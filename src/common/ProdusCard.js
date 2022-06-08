@@ -8,9 +8,7 @@ import {addToWishlist} from "../helpers";
 function ProdusCard({ produs }) {
 	const [showButton, setshowButton] = useState(false);
 	return (
-		<Col 
-			xs='12' 
-			md='6'
+		<Col xs='12' md='3'
 			onMouseEnter={()=>{
 				setshowButton(true);
 				}}

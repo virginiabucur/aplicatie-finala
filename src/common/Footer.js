@@ -5,7 +5,9 @@ import {Row, Col, Container} from "reactstrap";
 function Footer() {
 	return (
 		<>
-			<Container className='footer_container'>
+			<Container className='footer_container'
+			xs="12"
+			md ="6">
 				<Col className="links_and_company">
 					<div>
 					<Link style={{color: "white"}} className='links' to='/'>Home</Link>

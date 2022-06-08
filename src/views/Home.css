@@ -20,16 +20,15 @@ cover_image {
   top: 0;
   display: flex;
 }
-/* .categorii {
+.categorii {
   width: 100%;
   height: 20%;
-  display: flex;
-  position: fixed;
 	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	align-content: center;
-} */
+	flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 
 .populare{
   width: 100%;

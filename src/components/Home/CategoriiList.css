@@ -1,8 +1,5 @@
 .categorii_list{
-    display: flex;
+	/* display: flex; */
 	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+	/* width: 100%; */
 }

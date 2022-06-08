@@ -44,12 +44,11 @@ function Home() {
   }, []);
 
 
-
   return (
     categorii && 
-    populare && 
-      <>
-        <Container className="home_container" xs="12" md="12">
+    populare &&
+        <Container className="home_container" 
+        xs="12" md="4">
           <Carousel variant="dark">
             <Carousel.Item>
               <img
@@ -73,7 +72,7 @@ function Home() {
                 alt="second slide"
               />
               <Carousel.Caption>
-                <h2>Clock</h2>
+                <h2>Home products</h2>
                 <h3>Creative furniture</h3>
                 <p>From luxury waches</p>
                 <Link className="links" to="/produse">
@@ -82,28 +81,22 @@ function Home() {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-        
-          <Container className="categorii">
-          {/* <Row> */}
-          {/* <Col> */}
-              <div>
+          <Row>
+            <h1>Category</h1> 
+          </Row>
+          <Row className="categorii">
                {categorii ? (
-                  <CategoriiList categorii={categorii} />
+                  <CategoriiList categorii={categorii} key={'categorii_'}/>
                 ) : (
                   <div>Loading...</div>
                 )}
-                </div>
-            {/* </Row> */}
-            {/* </Col> */}
-          </Container>
-        <Container className="populare"
-        >
-          <>
+            </Row>
             <div>
                 <h1>Trending Products</h1>
                 <h4>Descriere produse populare</h4>
             </div>
-            <Row>
+            <Row className="populare"
+            md='4'>
             {populare ? (
                     <>
                         {populare.map((populare, index) => {
@@ -114,12 +107,9 @@ function Home() {
                     <div>Loading ...</div>
                 )}
             </Row>
-          </>
+            <Footer/>
         </Container>
-        <Footer />
-        </Container>
-      </>
     )
-  
+
 }
 export default Home;

@@ -53,9 +53,7 @@ function Produse() {
 
 	return (
 		<>
-			<Container className='container'
-			xs="12"
-			md ="6">
+			<Container className='container'>
 				<Col md="4"
 				xs="12">
 					<Row>
@@ -68,27 +66,24 @@ function Produse() {
 					fashon*/}
 				</Col>
 			{/* sub denumire pagina aducem Search ul */}
-				<Col md="4"
-				xs="12">
-					<Container
-						md="4"
-						xs="12">
-					<Row>
+				<Col 
+				md="4"xs="12">
+					{/* <Row > */}
 						<Search handleSearch={onSearch} />
 						{/* sub Search aducem lista de produse */}
 						{/* daca avem produse in lista, afisam ProdusList, altfel afisam un div ce contine mesajul:Loading */}
 						{/* Pas6: trimitem datele privind produsele la ProdusList */}
-					</Row>
+					{/* </Row>
 					<Row 
 						md="4"
-						xs="12">
+						xs="12"
+						> */}
 						{produs ? (
 						<ProdusList produs={filterByInput(produs, inputValue)} />
 							) : (
 						<div>Loading...</div>
 				)}
-					</Row>
-					</Container>
+					{/* </Row> */}
 				</Col>
 			</Container>
 			<Footer />
