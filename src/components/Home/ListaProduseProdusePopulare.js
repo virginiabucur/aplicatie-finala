@@ -1,21 +1,19 @@
-import "./ListaProdusePopulare.css";
-// import { useState, useEffect } from "react";
-import {Row, Col, Container} from "reactstrap";
-import { Link } from "react-router-dom";
-import Home from "../../views/Home";
+import {Col} from "reactstrap";
 
-
-function ListaProdusePopulare(populare) {
-return (
-    
-    <Row xs='12' md='4'
-    className="produse_populare">
-        <Link to = {"../../views/Home/"}>
-        <p>{populare.title}</p>
-        <p>{populare.image}</p>
-       </Link>
-       
-    </Row>
-);
+function ListaProdusePopulare({ populare }) {
+  return (
+    <Col xs="12" md="4" className="produse_populare">
+      <img
+        src={populare.image}
+        style={{
+          height: "200px",
+          objectFit: "contain",
+          width: "100%",
+        }}
+      />
+      <h4>{populare.title}</h4>
+      <p>{populare.price}</p>
+    </Col>
+  );
 }
-    export default ListaProdusePopulare;
+export default ListaProdusePopulare;

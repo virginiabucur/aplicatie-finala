@@ -96,7 +96,6 @@ function Wishlist() {
 					</tbody>
 				</Table>
 			</Container>
-		<Footer />
 		</>
 	);
 }

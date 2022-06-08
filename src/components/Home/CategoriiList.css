@@ -1,5 +1,5 @@
-.categorii_list{
-	/* display: flex; */
-	flex-direction: row;
-	/* width: 100%; */
+
+.categorii_list img{
+	 width: 120px !important;
+	 object-fit: contain;
 }

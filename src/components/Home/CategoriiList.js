@@ -9,24 +9,17 @@ function CategoriiList({ categorii }) {
 //   console.log(JSON.stringify(categorii));
   return categorii.slice(0,4).map((categorii, key) => {
     return (
-	<Container className="categorii_list">
-		<Col>
+	
+		<Col xs="12" md="3" className="categorii_list">
 				<img 
-					src="https://demo.lion-themes.net/outstock/wp-content/uploads/2016/08/8-2.jpg"
-					style = 
-					{{
-					width:"500px",
-					height:"100px",
-					objectFit:"contain",
-					}}
-				/>
+					src="https://demo.lion-themes.net/outstock/wp-content/uploads/2016/08/8-2.jpg"/>
 				<h4>{categorii}</h4>
-				{key}
+				{/* {key} */}
 			<Link to='/produse'>
 				<Button>Descover now!</Button>
 			</Link>
 		</Col>
-	</Container>
+	
     );
   });
 }

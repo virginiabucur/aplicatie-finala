@@ -31,10 +31,8 @@ function Home() {
 
   const [populare, setPopulare] = useState(null);
   const getPopulare = async () => {
-    const response = await fetch(
-      "https://fakestoreapi.com/products?limit=8"
-    );
-    const populareFromAPI = await response.json();
+    const responseP = await fetch("https://fakestoreapi.com/products?limit=8");
+    const populareFromAPI = await responseP.json();
     setPopulare(populareFromAPI);
     console.log(populareFromAPI);
   };
@@ -43,73 +41,75 @@ function Home() {
     getPopulare();
   }, []);
 
-
   return (
-    categorii && 
-    populare &&
-        <Container className="home_container" 
-        xs="12" md="4">
-          <Carousel variant="dark">
-            <Carousel.Item>
-              <img
-                className="cover_image"
-                src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/11/slider-home2.jpg"
-                alt=""
-              />
-              <Carousel.Caption>
-                <h2>Drop chair</h2>
-                <h3>The black Leather Edition</h3>
-                <p>The drop chair wash designet</p>
-                <Link className="links" to="/produse">
-                  <Button>DESCOVER NOW!</Button>
-                </Link>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="cover_image"
-                src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/11/slider-home2-1.jpg"
-                alt="second slide"
-              />
-              <Carousel.Caption>
-                <h2>Home products</h2>
-                <h3>Creative furniture</h3>
-                <p>From luxury waches</p>
-                <Link className="links" to="/produse">
-                  <Button>DESCOVER NOW!</Button>
-                </Link>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-          <Row>
-            <h1>Category</h1> 
-          </Row>
-          <Row className="categorii">
-               {categorii ? (
-                  <CategoriiList categorii={categorii} key={'categorii_'}/>
-                ) : (
-                  <div>Loading...</div>
-                )}
-            </Row>
-            <div>
-                <h1>Trending Products</h1>
-                <h4>Descriere produse populare</h4>
-            </div>
-            <Row className="populare"
-            md='4'>
-            {populare ? (
-                    <>
-                        {populare.map((populare, index) => {
-                            return <ListaProdusePopulare populare={populare} key={"populare_" + index} />;
-                        })}
-                    </>
-                ) : (
-                    <div>Loading ...</div>
-                )}
-            </Row>
-            <Footer/>
-        </Container>
-    )
-
+    <Container className="home_container">
+      {/* <Row> */}
+      <Carousel variant="dark">
+        <Carousel.Item>
+          <img
+            className="cover_image"
+            src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/11/slider-home2.jpg"
+            alt=""
+          />
+          <Carousel.Caption>
+            <h2>Drop chair</h2>
+            <h3>The black Leather Edition</h3>
+            <p>The drop chair wash designet</p>
+            <Link className="links" to="/produse">
+              <Button>DESCOVER NOW!</Button>
+            </Link>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="cover_image"
+            src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/11/slider-home2-1.jpg"
+            alt="second slide"
+          />
+          <Carousel.Caption>
+            <h2>Home products</h2>
+            <h3>Creative furniture</h3>
+            <p>From luxury waches</p>
+            <Link className="links" to="/produse">
+              <Button>DESCOVER NOW!</Button>
+            </Link>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      <Container>
+        <h1>Category</h1>
+      </Container>
+      
+        <Row className="categorii">
+          {categorii ? (
+            <CategoriiList categorii={categorii} key={"categorii_"} />
+          ) : (
+            <div>Loading...</div>
+          )}
+        </Row>
+      
+      
+        <div>
+          <h1>Trending Products</h1>
+          <h4>Cele mai cautate produse le gasiti in lista de mai jos</h4>
+        </div>
+      
+      
+        <Row 
+        md="4"
+        className="populare">
+          {populare ? (
+            <>
+              {populare.map((populare, index) => {
+                return <ListaProdusePopulare populare={populare} />;
+              })}
+            </>
+          ) : (
+            <div>Loading ...</div>
+          )}
+        </Row>
+      
+    </Container>
+  );
 }
 export default Home;

@@ -13,14 +13,16 @@ function App() {
 		<div>
 			<BrowserRouter>
 				<Navigare />
-				<div style={{ marginTop: "90px" }}>
+				{/* <div style={{ marginTop: "0px" }}> */}
 					<Routes>
 						<Route path='/' element={<Home />}></Route>
 						<Route path='/produse/' element={<Produse />}></Route>
 						<Route path='/wishlist' element={<Wishlist />}></Route>
 					</Routes>
-				</div>
+				{/* </div> */}
+				<Footer/> 
 			</BrowserRouter>
+			
 		</div>
 	);
 }

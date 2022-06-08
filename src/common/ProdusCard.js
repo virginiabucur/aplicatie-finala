@@ -30,7 +30,7 @@ function ProdusCard({ produs }) {
 						marginTop: "60px",
 					}}
 				/>
-				<h2>{produs.title}</h2>
+				<h4>{produs.title}</h4>
 				<p>{produs.price} {"EUR"}</p> 
 			</Link>
 			<div style={{ minHeight: "50px" }}>

@@ -8,6 +8,7 @@ import {Col} from "reactstrap";
 
 function ProdusList({ produs }) {
 	return (
+	
 		<div className='list_container'>
 			{produs.map((produs, index) => {
 				return (<ProdusCard produs={produs} key={"produs_" + index} />);
