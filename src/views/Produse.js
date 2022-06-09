@@ -55,7 +55,7 @@ function Produse() {
 			<Container>
 			<div className='container_produse'>
 				<Col 
-				md="4" xs="12"
+				md="3"
 				>
 						<h2>Product categories</h2>
 						<h3>Accessories</h3>
@@ -66,7 +66,7 @@ function Produse() {
 				</Col>
 			{/* sub denumire pagina aducem Search ul */}
 				<Col 
-				// md="4" xs="12"
+				md="9" 
 				>
 					{/* <Row> */}
 						<Search handleSearch={onSearch} />

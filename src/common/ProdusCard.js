@@ -10,7 +10,7 @@ function ProdusCard({ produs }) {
 	return (
 		<>
 		<Col 
-		xs='12' md='3'
+		md='3'
 			onMouseEnter={()=>{
 				setshowButton(true);
 				}}
