@@ -5,9 +5,12 @@ import {Row, Col, Container} from "reactstrap";
 function Footer() {
 	return (
 		<>
-			<div className='footer_container'
+		<Col className='footer_container'
 			xs="12"
 			md ="6">
+			{/* <div className='footer_container'
+			xs="12"
+			md ="6"> */}
 				<div className="links_and_company">
 					<div>
 					<Link style={{color: "white"}} className='links' to='/'>Home</Link>
@@ -25,7 +28,8 @@ function Footer() {
 					<img src='https://icons.iconarchive.com/icons/social-media-icons/glossy-social/128/Github-icon.png'
 					alt='Github'/>
 				</div>
-			</div>
+			{/* </div> */}
+			</Col>
 		</>
 	);
 }

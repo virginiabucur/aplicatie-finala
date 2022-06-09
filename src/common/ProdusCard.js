@@ -8,13 +8,16 @@ import {addToWishlist} from "../helpers";
 function ProdusCard({ produs }) {
 	const [showButton, setshowButton] = useState(false);
 	return (
-		<Col xs='12' md='3'
+		<>
+		<Col 
+		xs='12' md='3'
 			onMouseEnter={()=>{
 				setshowButton(true);
 				}}
 			onMouseLeave={()=>{
 					setshowButton(false);
-				}}>
+				}}
+				>
 			<Link
 				to={"..common/ProdusList/" + produs.id}
 				style={{
@@ -46,6 +49,7 @@ function ProdusCard({ produs }) {
 				)}
 			</div>
 		</Col>
+		</>
 	);
 }
 

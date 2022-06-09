@@ -12,7 +12,10 @@ function CategoriiList({ categorii }) {
 	
 		<Col xs="12" md="3" className="categorii_list">
 				<img 
-					src="https://demo.lion-themes.net/outstock/wp-content/uploads/2016/08/8-2.jpg"/>
+					// src={categorii.image}
+					// src={`https://picsum.photos/seed/${categorii.id}/600`}
+					src="https://demo.lion-themes.net/outstock/wp-content/uploads/2016/08/8-2.jpg"
+					/>
 				<h4>{categorii}</h4>
 				{/* {key} */}
 			<Link to='/produse'>

@@ -1,7 +1,7 @@
 //Pas1: importam useState si useEffect din react
 import { useState, useEffect } from "react";
 //Pas4: importam container ul, row ul si col din reactstrap
-import {Container, Button} from "reactstrap";
+import {Container, Button, Row} from "reactstrap";
 import {Link} from "react-router-dom";
 import {Table} from "react-bootstrap";
 import "./Wishlist.css";
@@ -38,10 +38,11 @@ function Wishlist() {
 	return (
 		<>
 	{/* //pas4: in interiorul row lui vom avea tabelul cu produsele din wishlist */}
-			<Container className="cover_image"
+		<Container>
+			<div className="cover_image"
 			xs="12"
-			md ="6">
-				<div>
+			>
+		
 					<img src="https://demo.lion-themes.net/outstock/wp-content/uploads/2017/09/banner-page.jpg"
 					alt=""
 					/>
@@ -51,7 +52,7 @@ function Wishlist() {
 					</h2>
 					<span className = 'text_image2'>/Wishlist</span>
 				</div>
-
+	
 				<Table>
 				<thead>
     				<tr>

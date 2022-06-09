@@ -3,9 +3,8 @@ import Search from "../components/Produse/Search";
 import ProdusList from "../components/Produse/ProdusList";
 import { useState, useEffect } from "react";
 import {Row, Col, Container} from "reactstrap";
-import {addToWishlist} from "../helpers";
-import { Link } from "react-router-dom";
-import Footer from "../common/Footer";
+// import {addToWishlist} from "../helpers";
+// import Footer from "../common/Footer";
 
 
 function Produse() {
@@ -53,35 +52,38 @@ function Produse() {
 
 	return (
 		<>
-			<Container className='container'>
-				<Col md="6"
-				xs="12">
-					<div>
-						<h1>Product categories</h1>
+			<Container>
+			<div className='container_produse'>
+				<Col 
+				md="4" xs="12"
+				>
+						<h2>Product categories</h2>
 						<h3>Accessories</h3>
 						<h3>Fashion</h3>
 						<h3>Men</h3>
-					</div>
 					{/* Link catre accesorii
 					fashon*/}
 				</Col>
 			{/* sub denumire pagina aducem Search ul */}
 				<Col 
-				md="6"xs="12">
-					<Row>
+				// md="4" xs="12"
+				>
+					{/* <Row> */}
 						<Search handleSearch={onSearch} />
 						{/* sub Search aducem lista de produse */}
 						{/* daca avem produse in lista, afisam ProdusList, altfel afisam un div ce contine mesajul:Loading */}
 						{/* Pas6: trimitem datele privind produsele la ProdusList */}
-					</Row>
-					<Row>
+					{/* </Row> */}
+					{/* <Row 
+					md="3"> */}
 						{produs ? (
 						<ProdusList produs={filterByInput(produs, inputValue)} />
 							) : (
 						<div>Loading...</div>
 				)}
-					</Row>
+					{/* </Row> */}
 				</Col>
+				</div>
 			</Container>
 		</>
 	);

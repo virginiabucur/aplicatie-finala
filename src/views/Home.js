@@ -2,7 +2,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 import { Carousel } from "react-bootstrap";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import Footer from "../common/Footer";
+// import Footer from "../common/Footer";
 import { useState, useEffect } from "react";
 import CategoriiList from "../components/Home/CategoriiList";
 import ListaProdusePopulare from "../components/Home/ListaProduseProdusePopulare";
@@ -42,8 +42,8 @@ function Home() {
   }, []);
 
   return (
+   
     <Container className="home_container">
-      {/* <Row> */}
       <Carousel variant="dark">
         <Carousel.Item>
           <img
@@ -54,7 +54,7 @@ function Home() {
           <Carousel.Caption>
             <h2>Drop chair</h2>
             <h3>The black Leather Edition</h3>
-            <p>The drop chair wash designet</p>
+            <p>Visit us!</p>
             <Link className="links" to="/produse">
               <Button>DESCOVER NOW!</Button>
             </Link>
@@ -69,47 +69,46 @@ function Home() {
           <Carousel.Caption>
             <h2>Home products</h2>
             <h3>Creative furniture</h3>
-            <p>From luxury waches</p>
+            <p>Visit us!</p>
             <Link className="links" to="/produse">
               <Button>DESCOVER NOW!</Button>
             </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Container>
-        <h1>Category</h1>
-      </Container>
-      
-        <Row className="categorii">
+      <div className="categorii">
+        <Row>
+          <h1>Category</h1>
+        </Row>
+        <Row>
           {categorii ? (
             <CategoriiList categorii={categorii} key={"categorii_"} />
-          ) : (
-            <div>Loading...</div>
-          )}
+               ) : (
+              <div>Loading...</div>
+                )}
         </Row>
-      
-      
-        <div>
-          <h1>Trending Products</h1>
-          <h4>Cele mai cautate produse le gasiti in lista de mai jos</h4>
+      </div>
+      <div>
+      <Row>
+        <div className="populare">
+        <h1>Trending Products</h1>
+        <h4>Cele mai cautate produse le gasiti in lista de mai jos</h4>
         </div>
-      
-      
-        <Row 
-        md="4"
-        className="populare">
-          {populare ? (
-            <>
-              {populare.map((populare, index) => {
-                return <ListaProdusePopulare populare={populare} />;
-              })}
-            </>
-          ) : (
-            <div>Loading ...</div>
-          )}
-        </Row>
-      
+      </Row>
+      <Row md='4'>
+        {populare ? (
+          <>
+            {populare.map((populare, index) => {
+              return <ListaProdusePopulare populare={populare} />;
+            })}
+          </>
+        ) : (
+          <div>Loading ...</div>
+        )}
+      </Row>
+      </div>
     </Container>
+ 
   );
 }
 export default Home;

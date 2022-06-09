@@ -1,6 +1,5 @@
 import "./ProdusList.css";
 import ProdusCard from "../../common/ProdusCard";
-import {Col} from "reactstrap";
 
 //pas7: afisare informatii in lista folosindu ne de array, pe care il parcurgem 
 //parcurgem array ul cu map

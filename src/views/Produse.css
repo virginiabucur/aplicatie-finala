@@ -1,6 +1,5 @@
-.container {
+.container_produse {
     background-color: white;
-    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-around;

@@ -2,7 +2,8 @@ import {Col} from "reactstrap";
 
 function ListaProdusePopulare({ populare }) {
   return (
-    <Col xs="12" md="4" className="produse_populare">
+    <>
+      <div>
       <img
         src={populare.image}
         style={{
@@ -12,8 +13,9 @@ function ListaProdusePopulare({ populare }) {
         }}
       />
       <h4>{populare.title}</h4>
-      <p>{populare.price}</p>
-    </Col>
+      <p>{populare.price} {"EUR"}</p>
+    </div>
+    </>
   );
 }
 export default ListaProdusePopulare;
